@@ -51,53 +51,9 @@ object WallService {
         id = 11357
     }
 
-    //todo delete
-    fun printPosts() {
-        for (post in posts) {
-            print(post)
-            println()
-        }
-        println()
-    }
 
 }
 
 fun main() {
-//    val post = Post(
-//        "qqw",
-//        15,
-//        attachments = arrayOf(
-//            PhotoAttachment(Photo(15, "photo", arrayOf(Photo.PhotoSizesArray(" ", " ", 15, 25)))),
-//            NoteAttachment(Note(15, 25))
-//        )
-//    )
-//    WallService.add(
-//        Post(
-//            "qqw",
-//            15,
-//            attachments = arrayOf(
-//                PhotoAttachment(Photo(15, "photo", arrayOf(Photo.PhotoSizesArray(" ", " ", 15, 25)))),
-//                NoteAttachment(Note(15, 25))
-//            )
-//        )
-//    )
-    val post = Post(
-        "qqw",
-        15,
-        attachments = arrayOf(
-            PhotoAttachment(Photo(15, "photo", arrayOf(Photo.PhotoSizesArray(" ", " ", 15, 25)))),
-            NoteAttachment(Note(15, 25))
-        )
-    )
-    println(post.attachments?.get(1))
-    val attachment = post.attachments?.get(0)
-    println(
-        when (attachment) {
-            is PhotoAttachment -> "photo ${attachment.photo} "
-            is NoteAttachment -> "note ${attachment.note}"
-            else -> "nothing"
-        }
-    )
-
 
 }
