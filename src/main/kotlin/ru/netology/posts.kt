@@ -2,16 +2,17 @@ package ru.netology
 
 data class Post(
     val text: String,
-    val likes: Likes,
     val id: Int = 0,
-    val ownerId: Int = 0,
-    val fromId: Int = 0,
-    val createdBy: Int = 0,
+    val likes: Likes? = null,
+    val ownerId: Int? = 0,
+    val fromId: Int? = 0,
+    val createdBy: Int? = 0,
     val date: Int = 1710410475,
     val friendOnly: Boolean = false,
     val canDelete: Boolean = false,
+    val attachments: Array<Attachment>? = null
+)
 
-    )
 
 data class Likes(
     val count: Int,
@@ -29,7 +30,7 @@ object WallService {
     private var posts = emptyArray<Post>()
 
     fun add(post: Post): Post {
-        posts += post.copy(id = id)
+        posts += post.copy(id = id, likes = post.likes?.copy())
         id++
         return posts.last()
     }
@@ -50,9 +51,9 @@ object WallService {
         id = 11357
     }
 
+
 }
 
 fun main() {
-
 
 }
