@@ -10,6 +10,7 @@ data class Post(
     val date: Int = 1710410475,
     val friendOnly: Boolean = false,
     val canDelete: Boolean = false,
+    val attachments: Array<Attachment>? = null
 )
 
 
@@ -29,7 +30,7 @@ object WallService {
     private var posts = emptyArray<Post>()
 
     fun add(post: Post): Post {
-        posts += post.copy(id = id)
+        posts += post.copy(id = id, likes = post.likes?.copy())
         id++
         return posts.last()
     }
@@ -49,6 +50,7 @@ object WallService {
         posts = emptyArray()
         id = 11357
     }
+
 
 }
 
